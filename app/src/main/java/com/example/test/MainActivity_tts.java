@@ -14,15 +14,14 @@ import java.util.Locale;
 
 import static android.speech.tts.TextToSpeech.ERROR;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_tts extends AppCompatActivity {
 
     private TextToSpeech tts;              // TTS 변수 선언
     private EditText editText;
     private Button button01;
-
     private SeekBar seekBar;
 
-    public MainActivity() {
+    public MainActivity_tts() {
     }
 
     @Override
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 // SeekBar 값이 변경될 때마다 호출됩니다.
-                float speed = (float) seekBar.getProgress() / 100;
+                float speed = (float) (progress);
                 tts.setSpeechRate(speed);
             }
 
